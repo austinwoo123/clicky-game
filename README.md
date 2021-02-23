@@ -26,7 +26,25 @@ For this project, I created a memory game with React. This project required me t
 
 ## Code Snippets
 ```
+render() {
+    return (
+      <Wrapper>
+        <Title>Clicky Game</Title>
+        {this.state.randoms.map(randoms => (
+          <Card
 
+            id={randoms.id}
+            key={randoms.id}
+            name={randoms.name}
+            image={randoms.image}
+
+          />
+        ))}
+      </Wrapper>
+    );
+  }
+```
+This code shows what I am rendering onto the page with react. Starting with the wrapper, this is the basic component that holds the data stored in my random.json file. The card component is the blueprint for each of the blueprints.
 
 ## Built With
 - React
