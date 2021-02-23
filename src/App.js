@@ -1,26 +1,31 @@
 
 
 import React, { Component } from "react";
-import FriendCard from "./components/Card";
+import Card from "./components/Card";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import random from "./random.json";
 
 class App extends Component {
-  // Setting this.state.friends to the friends json array
-  state = {
-    random: random
-  };
-
+  constructor(props) {
+    super(props)
+    this.state = {
+      score: 0,
+      topScore: 0,
+      clicked: false,
+      message: "",
+      random: random
+    };
+  }
 
 
   // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
     return (
       <Wrapper>
-        <Title>Friends List</Title>
-        {this.state.random.map(friend => (
-          <FriendCard
+        <Title>Clicky Game</Title>
+        {this.state.random.map(random => (
+          <Card
 
             id={random.id}
             key={random.id}
